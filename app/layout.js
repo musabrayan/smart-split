@@ -1,6 +1,8 @@
 import { Plus_Jakarta_Sans, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import Header from "@/components/header";
+import { ConvexClientProvider } from "@/components/convex_client_provider";
+import { ClerkProvider } from '@clerk/nextjs'
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -31,10 +33,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${plusJakarta.variable} ${sourceSerif.variable} ${jetBrainsMono.variable} antialiased dark`}
       >
+        <ClerkProvider>
+        <ConvexClientProvider>
         <Header />
         <main className="min-h-screen">
           {children}
         </main>
+        </ConvexClientProvider>
+        </ClerkProvider>
       </body>
     </html>
   );
