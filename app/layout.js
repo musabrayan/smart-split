@@ -1,6 +1,6 @@
 import { Plus_Jakarta_Sans, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
+import Header from "@/components/Header";
 import { ConvexClientProvider } from "@/components/convex_client_provider";
 import { ClerkProvider } from '@clerk/nextjs'
 
