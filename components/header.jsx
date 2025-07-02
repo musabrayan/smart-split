@@ -22,7 +22,7 @@ const Header = () => {
   const path = usePathname();
 
   return (
-    <header className="fixed top-4 left-1/2 z-50 -translate-x-1/2 rounded-xl border border-border bg-background/90 backdrop-blur-md shadow-md w-[95%] max-w-4xl">
+    <header className="fixed top-4 left-1/2 z-50 -translate-x-1/2 rounded-full border border-border bg-background/20 backdrop-blur-md shadow-md w-[80%] max-w-6xl">
       <nav className="flex items-center justify-between px-4 py-3 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -38,7 +38,7 @@ const Header = () => {
 
         {/* Nav Links */}
         {path === "/" && (
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground">
+          <div className="hidden md:flex items-center gap-6 text-sm ml-30 font-medium text-foreground">
             <Link
               href="#features"
               className="hover:text-primary transition-colors"
@@ -74,12 +74,13 @@ const Header = () => {
 
           <Unauthenticated>
             <SignInButton>
-              <Button variant="outline" className="text-foreground hover:text-primary ">
+              <Button variant="outline" className="text-sm h-8 px-4 text-foreground hover:text-primary rounded-full">
                 Sign In
               </Button>
             </SignInButton>
             <SignUpButton>
-              <Button className="bg-primary text-primary-foreground hover:brightness-110 transition">
+              <Button className="text-sm h-8 px-4 bg-primary text-primary-foreground hover:brightness-110 transition rounded-full
+">
                 Get Started
               </Button>
             </SignUpButton>
