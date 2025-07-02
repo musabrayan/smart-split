@@ -22,19 +22,19 @@ const Header = () => {
   const path = usePathname();
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
+    <header className="fixed top-4 left-1/2 z-50 -translate-x-1/2 rounded-xl border border-border bg-background/90 backdrop-blur-md shadow-md w-[95%] max-w-4xl">
+      <nav className="flex items-center justify-between px-4 py-3 md:px-6">
         {/* Logo */}
-<Link href="/" className="flex items-center gap-2">
-  <Image
-    src="/assets/logo.png"
-    alt="SmartSplit Logo"
-    width={100}
-    height={20}
-    className="object-contain invert dark:invert-0"
-    priority
-  />
-</Link>
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/assets/logo.png"
+            alt="SmartSplit Logo"
+            width={85}
+            height={20}
+            className="object-contain invert dark:invert-0"
+            priority
+          />
+        </Link>
 
         {/* Nav Links */}
         {path === "/" && (
@@ -60,7 +60,7 @@ const Header = () => {
             <Link href="/dashboard">
               <Button
                 variant="outline"
-                className="hidden md:inline-flex items-center gap-2 text-accent hover:text-primary"
+                className="hidden md:inline-flex items-center gap-2 text-foreground hover:text-primary"
               >
                 <LayoutDashboard className="h-4 w-4" />
                 Dashboard
