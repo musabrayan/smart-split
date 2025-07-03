@@ -157,4 +157,20 @@
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+
+ ::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+  ::-webkit-scrollbar-track {
+  background: var(--background);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
 }
