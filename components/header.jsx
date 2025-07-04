@@ -91,7 +91,11 @@ const Header = () => {
   </nav>
 
   {/* Loading Bar */}
-  {isLoading && <BarLoader width="100%" color="#00d883" />}
+  {isLoading && (
+  <div className="px-10">
+    <BarLoader width="100%" color="#00d883" />
+  </div>
+)}
 </header>
 
   );

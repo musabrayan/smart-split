@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { ConvexClientProvider } from "@/components/convex_client_provider";
 import { ClerkProvider } from '@clerk/nextjs'
+import { Toaster } from "sonner";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
         <Header/>
         <main>
           {children}
+          <Toaster richColors />
         </main>
         </ConvexClientProvider>
         </ClerkProvider>
