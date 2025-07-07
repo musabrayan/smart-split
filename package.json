@@ -36,6 +36,7 @@
     "react-hook-form": "^7.60.0",
     "react-spinners": "^0.17.0",
     "recharts": "^3.0.2",
+    "resend": "^4.6.0",
     "simplex-noise": "^4.0.3",
     "sonner": "^2.0.5",
     "tailwind-merge": "^3.3.1",
