@@ -20,6 +20,6 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["./**/*"],
+  "include": ["./**/*", "../lib/inngest/spending-insights.js"],
   "exclude": ["./_generated"]
 }
