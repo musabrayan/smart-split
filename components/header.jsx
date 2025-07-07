@@ -56,7 +56,7 @@ const Header = () => {
           {/* Desktop Button */}
           <Button
             variant="outline"
-            className="hidden md:inline-flex items-center gap-2 text-sm h-8 px-3 text-foreground hover:text-primary"
+            className="hidden md:inline-flex items-center gap-2 text-sm h-8 px-3 text-foreground hover:text-primary hover:cursor-pointer"
           >
             <LayoutDashboard className="h-4 w-4" />
             Dashboard
@@ -74,14 +74,14 @@ const Header = () => {
         <SignInButton>
           <Button
             variant="outline"
-            className="text-sm h-8 px-3 py-3 text-foreground hover:text-primary rounded-full"
+            className="text-sm h-8 px-3 py-3 text-foreground hover:text-primary rounded-full hover:cursor-pointer"
           >
             Sign In
           </Button>
         </SignInButton>
         <SignUpButton>
           <Button
-            className="text-sm h-8 px-3 py-3 bg-primary text-primary-foreground hover:brightness-110 transition rounded-full"
+            className="text-sm h-8 px-3 py-3 bg-primary text-primary-foreground hover:brightness-110 transition rounded-full hover:cursor-pointer"
           >
             Get Started
           </Button>

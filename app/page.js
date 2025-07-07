@@ -13,7 +13,7 @@ export default function Home() {
       <Spotlight className="absolute inset-0 -z-10 pointer-events-none" />
 
       {/* Hero-Section */}
-     <section className="z-10 flex flex-col items-center justify-center text-center px-5 py-40 md:py-40 min-h-screen">
+     <section id="hero" className="z-10 flex flex-col items-center justify-center text-center px-5 py-40 md:py-40 min-h-screen">
         <div className="space-y-8 max-w-2xl w-full">
           <div className="flex justify-center">
             <HoverBorderGradient className="px-4 py-1 md:px-6 md:py-2">
@@ -32,7 +32,7 @@ export default function Home() {
           </p>
 
           <div className="flex justify-center mt-8">
-            <Button asChild className="text-sm md:text-base px-6 py-3">
+            <Button asChild className="text-sm md:text-base px-6 py-3 hover:cursor-pointer">
               <Link href="/dashboard" className="inline-flex items-center gap-2">
                 Get started
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -129,7 +129,7 @@ export default function Home() {
               Simplify group spending with easy bill splitting and expense tracking.
             </p>
 
-            <Button asChild className="text-sm md:text-base px-4 py-2">
+            <Button asChild className="text-sm md:text-base px-4 py-2 hover:cursor-pointer">
               <Link href="/dashboard" className="inline-flex items-center gap-2">
                 Get started
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -144,10 +144,10 @@ export default function Home() {
         <div className="mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm">&copy; {new Date().getFullYear()} YourCompany. All rights reserved.</p>
           <nav className="flex gap-6 text-sm">
-            <a href="/about" className="hover:text-white transition">About</a>
-            <a href="/privacy" className="hover:text-white transition">Privacy Policy</a>
-            <a href="/terms" className="hover:text-white transition">Terms of Service</a>
-            <a href="/contact" className="hover:text-white transition">Contact</a>
+            <a href="#hero" className="hover:text-white transition">About</a>
+            <a href="#hero" className="hover:text-white transition">Privacy Policy</a>
+            <a href="#hero" className="hover:text-white transition">Terms of Service</a>
+            <a href="https://www.linkedin.com/in/musab-rayan-87a391267/" className="hover:text-white transition">Contact</a>
           </nav>
         </div>
       </footer>

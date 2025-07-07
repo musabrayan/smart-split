@@ -152,16 +152,17 @@ export function ExpenseForm({ type = "individual", onSuccess }) {
   if (!currentUser) return null;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+      <div className="space-y-3 sm:space-y-4">
         {/* Description and amount */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <div className="space-y-2">
             <Label htmlFor="description">Description</Label>
             <Input
               id="description"
               placeholder="Lunch, movie tickets, etc."
               {...register("description")}
+              className="text-base sm:text-sm" // Larger text on mobile
             />
             {errors.description && (
               <p className="text-sm text-red-500">
@@ -179,6 +180,7 @@ export function ExpenseForm({ type = "individual", onSuccess }) {
               step="0.01"
               min="0.01"
               {...register("amount")}
+              className="text-base sm:text-sm" // Larger text on mobile
             />
             {errors.amount && (
               <p className="text-sm text-red-500">{errors.amount.message}</p>
@@ -187,7 +189,7 @@ export function ExpenseForm({ type = "individual", onSuccess }) {
         </div>
 
         {/* Category and date */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <div className="space-y-2">
             <Label htmlFor="category">Category</Label>
 
@@ -208,19 +210,21 @@ export function ExpenseForm({ type = "individual", onSuccess }) {
                 <Button
                   variant="outline"
                   className={cn(
-                    "w-full justify-start text-left font-normal",
+                    "w-full justify-start text-left font-normal text-base sm:text-sm h-10 sm:h-9",
                     !selectedDate && "text-muted-foreground"
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
                   {selectedDate ? (
-                    format(selectedDate, "PPP")
+                    <span className="truncate">
+                      {format(selectedDate, "MMM dd, yyyy")}
+                    </span>
                   ) : (
                     <span>Pick a date</span>
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0">
+              <PopoverContent className="w-auto p-0" align="start">
                 <Calendar
                   mode="single"
                   selected={selectedDate}
@@ -282,10 +286,10 @@ export function ExpenseForm({ type = "individual", onSuccess }) {
         <div className="space-y-2">
           <Label>Paid by</Label>
           <select
-            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+            className="w-full rounded-md border border-input bg-background px-3 py-2 text-base sm:text-sm h-10 sm:h-9"
             {...register("paidByUserId")}
           >
-            <option value="" disabled> Select who paid</option>
+            <option value="" disabled>Select who paid</option>
             {participants.map((participant) => (
               <option key={participant.id} value={participant.id}>
                 {participant.id === currentUser._id ? "You" : participant.name}
@@ -306,10 +310,10 @@ export function ExpenseForm({ type = "individual", onSuccess }) {
             defaultValue="equal"
             onValueChange={(value) => setValue("splitType", value)}
           >
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="equal">Equal</TabsTrigger>
-              <TabsTrigger value="percentage">Percentage</TabsTrigger>
-              <TabsTrigger value="exact">Exact Amounts</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-3 h-auto p-1">
+              <TabsTrigger value="equal" className="text-xs sm:text-sm px-2 py-2">Equal</TabsTrigger>
+              <TabsTrigger value="percentage" className="text-xs sm:text-sm px-2 py-2">Percentage</TabsTrigger>
+              <TabsTrigger value="exact" className="text-xs sm:text-sm px-2 py-2">Exact Amounts</TabsTrigger>
             </TabsList>
             <TabsContent value="equal" className="pt-4">
               <p className="text-sm text-muted-foreground">
@@ -351,10 +355,11 @@ export function ExpenseForm({ type = "individual", onSuccess }) {
         </div>
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex flex-col sm:flex-row justify-end gap-3">
         <Button
           type="submit"
           disabled={isSubmitting || participants.length <= 1}
+          className="w-full sm:w-auto min-h-[44px] text-base sm:text-sm"
         >
           {isSubmitting ? "Creating..." : "Create Expense"}
         </Button>

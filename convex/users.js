@@ -32,10 +32,10 @@ export const store = mutation({
     }
     // If it's a new identity, create a new `User`.
     return await ctx.db.insert("users", {
-      name: identity.name ?? "Anonymous",
-      tokenIdentifier: identity.tokenIdentifier,
-      email: identity.email,
-      imageUrl: identity.pictureUrl,
+      name: identity?.name || identity?.email?.split('@')[0] || "Anonymous",
+      tokenIdentifier: identity?.tokenIdentifier,
+      email: identity?.email,
+      imageUrl: identity?.pictureUrl,
     });
   },
 });
@@ -100,10 +100,10 @@ export const searchUsers = query({
     return users
       .filter((user) => user._id !== currentUser._id)
       .map((user) => ({
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        imageUrl: user.imageUrl,
+        id: user?._id,
+        name: user?.name,
+        email: user?.email,
+        imageUrl: user?.imageUrl,
       }));
   },
 });

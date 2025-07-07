@@ -19,8 +19,8 @@ export function GroupMembers({ members }) {
   return (
     <div className="space-y-4">
       {members.map((member) => {
-        const isCurrentUser = member.id === currentUser?._id;
-        const isAdmin = member.role === "admin";
+        const isCurrentUser = member?.id === currentUser?._id;
+        const isAdmin = member?.role === "admin";
 
         return (
           <div
@@ -29,8 +29,8 @@ export function GroupMembers({ members }) {
           >
             <div className="flex items-center gap-3">
               <Avatar className="h-8 w-8">
-                <AvatarImage src={member.imageUrl} />
-                <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
+                <AvatarImage src={member?.imageUrl} />
+                <AvatarFallback>{member?.name?.charAt(0)}</AvatarFallback>
               </Avatar>
               <div>
                 <div className="flex items-center gap-2 flex-wrap">

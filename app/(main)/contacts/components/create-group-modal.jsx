@@ -168,13 +168,13 @@ export function CreateGroupModal({ isOpen, onClose, onSuccess }) {
                     </AvatarFallback>
                   </Avatar>
                   <span>{member.name}</span>
-                  <button
+                  <Button
                     type="button"
                     onClick={() => removeMember(member.id)}
-                    className="ml-2 text-muted-foreground hover:text-foreground"
+                    className="ml-2 text-muted-foreground hover:text-foreground hover:cursor-pointer"
                   >
                     <X className="h-3 w-3" />
-                  </button>
+                  </Button>
                 </Badge>
               ))}
 

@@ -55,7 +55,7 @@ export default function ContactsPage() {
     </h1>
     <Button
       onClick={() => setIsCreateGroupModalOpen(true)}
-      className="w-full md:w-auto"
+      className="w-full md:w-auto hover:cursor-pointer"
     >
       <Plus className="mr-2 h-4 w-4" />
       Create Group

@@ -157,6 +157,10 @@
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+  html {
+  scroll-behavior: smooth;
+}
+
 
  ::-webkit-scrollbar {
   width: 2px;
